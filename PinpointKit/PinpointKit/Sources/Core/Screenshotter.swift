@@ -25,7 +25,7 @@ open class Screenshotter {
         application.windows.forEach { window in
             guard window.screen == screen else { return }
             
-            window.drawHierarchy(in: window.bounds, afterScreenUpdates: false)
+            window.drawHierarchy(in: window.bounds, afterScreenUpdates: true)
         }
         
         guard let image = UIGraphicsGetImageFromCurrentImageContext() else {
